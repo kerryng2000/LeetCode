@@ -1,0 +1,59 @@
+class Solution {
+    public String[] findWords(String[] words) 
+    {
+        String[] row1 = new String[]{"q","w","e","r","t","y","u","i","o","p"};
+        String[] row2 = new String[]{"a","s","d","f","g","h","j","k","l"};
+        String[] row3 = new String[]{"z","x","c","v","b","n","m"};
+        String[] real = new String[10];
+        int count = 0;
+        int counter = 0;
+        for(int i = 0; i < words.length; i++)
+        {
+            String word = words[i];
+            counter = 0;
+            for(int q = 0; q < row1.length; q++)
+            {
+                if(word.contains(row1[q]))
+                {
+                    counter++;
+                }
+            }
+            if(counter == word.length()-1)
+            {
+                real[count] = words[i];
+                count++;
+                continue;
+            }
+              counter = 0;
+             for(int q = 0; q < row2.length; q++)
+            {
+               
+                if(word.contains(row2[q]))
+                {
+                    counter++;
+                }
+             }
+            if(counter == word.length()-1)
+            {
+                real[count] = words[i];
+                count++;
+                continue;
+            }
+              counter = 0;
+             for(int q = 0; q < row3.length; q++)
+            { 
+                if(word.contains(row3[q]))
+                {
+                    counter++;
+                }
+            }
+            if(counter == word.length()-1)
+            {
+                real[count] = words[i];
+                count++;
+                continue;
+            }
+        }
+        return real;
+    }
+}
