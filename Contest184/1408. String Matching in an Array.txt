@@ -1,0 +1,27 @@
+class Solution {
+    public List<String> stringMatching(String[] words)
+    {
+
+        List<String> list = new ArrayList<String>();
+        
+        for(int i = 0; i < words.length; i++)
+        {
+            for(int count = 0; count < words.length; count++)
+            {
+                if(words[i] == words[count])
+                {
+                    continue;
+                }
+                if(words[i].contains(words[count]))
+                {
+                    if(!list.contains(words[count]))
+                    {
+                    list.add(words[count]);
+                    }
+                }
+            }
+        }
+        
+        return list;
+    }
+}
