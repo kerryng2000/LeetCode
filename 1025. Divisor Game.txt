@@ -8,3 +8,5 @@ class Solution {
         return false;
     }
 }
+
+//Beats 100% of the other java solutions.
