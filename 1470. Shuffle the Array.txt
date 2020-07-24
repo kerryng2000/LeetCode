@@ -1,0 +1,30 @@
+class Solution {
+    public int[] shuffle(int[] nums, int n) 
+    {
+      int[] right = new int[nums.length/2];
+        int counter = 0;
+      for(int i = n; i <= nums.length-1; i++)
+      {
+          right[counter] = nums[i];
+          counter++;
+      }
+        int[] newarr = new int[nums.length];
+        int rightcount = 0;
+        int leftcount = 0;
+        for(int i = 0; i < newarr.length; i++)
+        {
+            if(i%2==0)
+            {
+                newarr[i] = nums[leftcount];
+                leftcount++;
+            }
+            else
+            {
+                newarr[i] = right[rightcount];
+                rightcount++;
+            }
+        }
+        return newarr;
+        
+    }
+}
