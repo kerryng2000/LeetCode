@@ -1,0 +1,23 @@
+class Solution {
+    public int[] smallerNumbersThanCurrent(int[] nums) 
+{
+        int[] tsm = new int[nums.length];
+        for(int i = 0; i < nums.length; i++)
+        {
+            int total = 0;
+            for(int x = 0; x < nums.length; x++)
+            {
+                if(nums[i] == nums[x])
+                {
+                    continue;
+                }
+                if(nums[i] > nums[x])
+                {
+                    total++;
+                }
+            }
+            tsm[i] = total;
+        }
+        return tsm;
+    }
+}
