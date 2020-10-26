@@ -1,0 +1,1 @@
+SELECT DISTINCT Email FROM Person P1 WHERE Email IN (SELECT Email FROM Person P2 WHERE P1.Email = P2.Email && P1.Id != P2.Id);
